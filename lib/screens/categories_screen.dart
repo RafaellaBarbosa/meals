@@ -22,7 +22,7 @@ class CategoriesScreen extends StatelessWidget {
         ),
         children:
             categories.map((category) {
-              return CategoryItem(category);
+              return CategoryItem(category: category);
             }).toList(),
       ),
     );
