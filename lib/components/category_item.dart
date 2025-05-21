@@ -14,12 +14,18 @@ class CategoryItem extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         gradient: LinearGradient(
-          colors: [category.color.withOpacity(0.5), category.color],
+          colors: [
+            category.color.withAlpha((0.7 * 255).round()),
+            category.color,
+          ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
       ),
-      child: Text(category.title),
+      child: Text(
+        category.title,
+        style: Theme.of(context).textTheme.titleLarge,
+      ),
     );
   }
 }
