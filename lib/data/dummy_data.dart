@@ -1,58 +1,19 @@
 import 'package:flutter/material.dart';
+
 import '../models/category.dart';
 import '../models/meal.dart';
 
 const dummyCategories = [
-  Category(
-    id: 'c1',
-    title: 'Italiano',
-    color: Colors.purple,
-  ),
-  Category(
-    id: 'c2',
-    title: 'Rápido & Fácil',
-    color: Colors.red,
-  ),
-  Category(
-    id: 'c3',
-    title: 'Hamburgers',
-    color: Colors.orange,
-  ),
-  Category(
-    id: 'c4',
-    title: 'Alemã',
-    color: Colors.amber,
-  ),
-  Category(
-    id: 'c5',
-    title: 'Leve & Saudável',
-    color: Colors.indigo,
-  ),
-  Category(
-    id: 'c6',
-    title: 'Exótica',
-    color: Colors.green,
-  ),
-  Category(
-    id: 'c7',
-    title: 'Café da Manhã',
-    color: Colors.lightBlue,
-  ),
-  Category(
-    id: 'c8',
-    title: 'Asiática',
-    color: Colors.lightGreen,
-  ),
-  Category(
-    id: 'c9',
-    title: 'Francesa',
-    color: Colors.pink,
-  ),
-  Category(
-    id: 'c10',
-    title: 'Verão',
-    color: Colors.teal,
-  ),
+  Category(id: 'c1', title: 'Italiano', color: Colors.purple),
+  Category(id: 'c2', title: 'Rápido & Fácil', color: Colors.red),
+  Category(id: 'c3', title: 'Hamburgers', color: Colors.orange),
+  Category(id: 'c4', title: 'Alemã', color: Colors.amber),
+  Category(id: 'c5', title: 'Leve & Saudável', color: Colors.indigo),
+  Category(id: 'c6', title: 'Exótica', color: Colors.green),
+  Category(id: 'c7', title: 'Café da Manhã', color: Colors.lightBlue),
+  Category(id: 'c8', title: 'Asiática', color: Colors.lightGreen),
+  Category(id: 'c9', title: 'Francesa', color: Colors.pink),
+  Category(id: 'c10', title: 'Verão', color: Colors.teal),
 ];
 
 const dummyMeals = [
@@ -71,7 +32,7 @@ const dummyMeals = [
       '1 Onion',
       '250g Spaghetti',
       'Spices',
-      'Cheese (optional)'
+      'Cheese (optional)',
     ],
     steps: [
       'Cut the tomatoes and the onion into small pieces.',
@@ -80,7 +41,7 @@ const dummyMeals = [
       'In the meantime, heaten up some olive oil and add the cut onion.',
       'After 2 minutes, add the tomato pieces, salt, pepper and your other spices.',
       'The sauce will be done once the spaghetti are.',
-      'Feel free to add some cheese on top of the finished dish.'
+      'Feel free to add some cheese on top of the finished dish.',
     ],
     isGlutenFree: false,
     isVegan: true,
@@ -101,12 +62,12 @@ const dummyMeals = [
       '1 Slice Ham',
       '1 Slice Pineapple',
       '1-2 Slices of Cheese',
-      'Butter'
+      'Butter',
     ],
     steps: [
       'Butter one side of the white bread',
       'Layer ham, the pineapple and cheese on the white bread',
-      'Bake the toast for round about 10 minutes in the oven at 200°C'
+      'Bake the toast for round about 10 minutes in the oven at 200°C',
     ],
     isGlutenFree: false,
     isVegan: false,
@@ -128,14 +89,14 @@ const dummyMeals = [
       '1 Cucumber',
       '1 Onion',
       'Ketchup',
-      '2 Burger Buns'
+      '2 Burger Buns',
     ],
     steps: [
       'Form 2 patties',
       'Fry the patties for c. 4 minutes on each side',
       'Quickly fry the buns for c. 1 minute on each side',
       'Bruch buns with ketchup',
-      'Serve burger with tomato, cucumber and onion'
+      'Serve burger with tomato, cucumber and onion',
     ],
     isGlutenFree: false,
     isVegan: false,
@@ -159,7 +120,7 @@ const dummyMeals = [
       '300ml Butter',
       '100g Vegetable Oil',
       'Salt',
-      'Lemon Slices'
+      'Lemon Slices',
     ],
     steps: [
       'Tenderize the veal to about 2–4mm, and salt on both sides.',
@@ -168,7 +129,7 @@ const dummyMeals = [
       'Heat the butter and oil in a large pan (allow the fat to get very hot) and fry the schnitzels until golden brown on both sides.',
       'Make sure to toss the pan regularly so that the schnitzels are surrounded by oil and the crumbing becomes ‘fluffy’.',
       'Remove, and drain on kitchen paper. Fry the parsley in the remaining oil and drain.',
-      'Place the schnitzels on awarmed plate and serve garnishedwith parsley and slices of lemon.'
+      'Place the schnitzels on awarmed plate and serve garnishedwith parsley and slices of lemon.',
     ],
     isGlutenFree: false,
     isVegan: false,
@@ -193,14 +154,14 @@ const dummyMeals = [
       'Mustard',
       'Balsamic Vinegar',
       'Olive Oil',
-      'Salt and Pepper'
+      'Salt and Pepper',
     ],
     steps: [
       'Wash and cut salad and herbs',
       'Dice the salmon',
       'Process mustard, vinegar and olive oil into a dessing',
       'Prepare the salad',
-      'Add salmon cubes and dressing'
+      'Add salmon cubes and dressing',
     ],
     isGlutenFree: true,
     isVegan: false,
@@ -262,7 +223,7 @@ const dummyMeals = [
       'In a large bowl, sift together the flour, baking powder, salt and sugar.',
       'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
       'Heat a lightly oiled griddle or frying pan over medium high heat.',
-      'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'
+      'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.',
     ],
     isGlutenFree: true,
     isVegan: false,
@@ -293,7 +254,7 @@ const dummyMeals = [
       'Add spices and stir fry',
       'Add chicken breast + 250ml of water and cook everything for 10 minutes',
       'Add coconut milk',
-      'Serve with rice'
+      'Serve with rice',
     ],
     isGlutenFree: true,
     isVegan: false,
@@ -361,7 +322,7 @@ const dummyMeals = [
       '30g Pine Nuts',
       '300g Cherry Tomatoes',
       'Salad',
-      'Salt, Pepper and Olive Oil'
+      'Salt, Pepper and Olive Oil',
     ],
     steps: [
       'Wash, peel and cut the asparagus',
@@ -370,11 +331,121 @@ const dummyMeals = [
       'Roast the pine nuts',
       'Halve the tomatoes',
       'Mix with asparagus, salad and dressing',
-      'Serve with Baguette'
+      'Serve with Baguette',
     ],
     isGlutenFree: true,
     isVegan: true,
     isVegetarian: true,
     isLactoseFree: true,
+  ),
+
+  Meal(
+    id: 'm11',
+    categories: ['c1', 'c2'],
+    title: 'Spaghetti com Molho de Tomate',
+    imageUrl:
+        'https://cdn.pixabay.com/photo/2014/12/21/23/28/recipe-575434_1280.png',
+    ingredients: [
+      '4 Tomates',
+      '1 Colher de Sopa de Azeite',
+      '1 Cebola',
+      '250g de Spaghetti',
+      'Especiarias',
+      'Queijo (opcional)',
+    ],
+    steps: [
+      'Ferva água com sal.',
+      'Cozinhe o spaghetti até ficar al dente.',
+      'Refogue cebola no azeite.',
+      'Adicione tomates e especiarias.',
+      'Misture o molho ao spaghetti.',
+      'Sirva com queijo se desejar.',
+    ],
+    duration: 20,
+    isGlutenFree: false,
+    isLactoseFree: true,
+    isVegan: true,
+    isVegetarian: true,
+    complexity: Complexity.simple,
+    cost: Cost.cheap,
+  ),
+  Meal(
+    id: 'm12',
+    categories: ['c2'],
+    title: 'Frango Grelhado',
+    imageUrl:
+        'https://cdn.pixabay.com/photo/2020/02/16/17/50/chicken-4852506_1280.jpg',
+    ingredients: ['500g de Peito de Frango', 'Sal', 'Pimenta', 'Azeite'],
+    steps: [
+      'Tempere o frango com sal e pimenta.',
+      'Aqueça uma frigideira com azeite.',
+      'Grelhe o frango até dourar e cozinhar por completo.',
+      'Sirva com acompanhamentos de sua escolha.',
+    ],
+    duration: 30,
+    isGlutenFree: true,
+    isLactoseFree: true,
+    isVegan: false,
+    isVegetarian: false,
+    complexity: Complexity.medium,
+    cost: Cost.fair,
+  ),
+  Meal(
+    id: 'm13',
+    categories: ['c3'],
+    title: 'Salada Mediterrânea',
+    imageUrl:
+        'https://cdn.pixabay.com/photo/2016/03/05/19/02/salad-1238248_1280.jpg',
+    ingredients: [
+      'Alface',
+      'Tomate',
+      'Pepino',
+      'Azeitonas',
+      'Queijo Feta',
+      'Azeite de Oliva',
+    ],
+    steps: [
+      'Lave todos os vegetais.',
+      'Corte em pedaços pequenos.',
+      'Misture todos os ingredientes.',
+      'Regue com azeite de oliva.',
+      'Sirva fresca.',
+    ],
+    duration: 10,
+    isGlutenFree: true,
+    isLactoseFree: false,
+    isVegan: false,
+    isVegetarian: true,
+    complexity: Complexity.simple,
+    cost: Cost.cheap,
+  ),
+  Meal(
+    id: 'm14',
+    categories: ['c4', 'c5'],
+    title: 'Bolo de Chocolate',
+    imageUrl:
+        'https://cdn.pixabay.com/photo/2017/05/07/08/56/chocolate-2299588_1280.jpg',
+    ingredients: [
+      '200g de Chocolate',
+      '150g de Açúcar',
+      '3 Ovos',
+      '200g de Farinha',
+      '100g de Manteiga',
+      '1 Colher de Fermento',
+    ],
+    steps: [
+      'Derreta o chocolate e a manteiga.',
+      'Bata os ovos com açúcar.',
+      'Adicione farinha e fermento.',
+      'Misture tudo e leve ao forno a 180ºC por 35 minutos.',
+      'Sirva após esfriar.',
+    ],
+    duration: 60,
+    isGlutenFree: false,
+    isLactoseFree: false,
+    isVegan: false,
+    isVegetarian: true,
+    complexity: Complexity.difficult,
+    cost: Cost.fair,
   ),
 ];
