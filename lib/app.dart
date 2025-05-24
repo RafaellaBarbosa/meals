@@ -18,6 +18,25 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white,
           centerTitle: true,
         ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.pink,
+          foregroundColor: Colors.white,
+          elevation: 5,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+        ),
+        tabBarTheme: const TabBarTheme(
+          labelColor: Colors.white,
+          unselectedLabelColor: Colors.white70,
+          indicator: BoxDecoration(
+            color: Colors.pink,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15),
+              topRight: Radius.circular(15),
+            ),
+          ),
+        ),
         canvasColor: const Color.fromRGBO(255, 254, 229, 1),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
