@@ -37,6 +37,21 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
+        switchTheme: SwitchThemeData(
+          thumbColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.selected)) {
+              return Colors.pink;
+            }
+            return Colors.grey;
+          }),
+          trackColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.selected)) {
+              return Colors.pink.withOpacity(0.5);
+            }
+            return Colors.grey.withOpacity(0.5);
+          }),
+        ),
+
         canvasColor: const Color.fromRGBO(255, 254, 229, 1),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
