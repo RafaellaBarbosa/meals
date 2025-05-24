@@ -36,6 +36,14 @@ class MealItem extends StatelessWidget {
                       height: 250,
                       width: double.infinity,
                       fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return Image.asset(
+                          'assets/images/placeholder.png', 
+                          height: 250,
+                          width: double.infinity,
+                          fit: BoxFit.cover,
+                        );
+                      },
                     ),
                   ),
                 ),
