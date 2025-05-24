@@ -31,14 +31,15 @@ class MealItem extends StatelessWidget {
                   ),
                   child: Hero(
                     tag: meal.id,
-                    child: Image.network(
-                      meal.imageUrl,
+                    child: FadeInImage.assetNetwork(
+                      placeholder: 'assets/images/placeholder.png',
+                      image: meal.imageUrl,
                       height: 250,
                       width: double.infinity,
                       fit: BoxFit.cover,
-                      errorBuilder: (context, error, stackTrace) {
+                      imageErrorBuilder: (context, error, stackTrace) {
                         return Image.asset(
-                          'assets/images/placeholder.png', 
+                          'assets/images/placeholder.png',
                           height: 250,
                           width: double.infinity,
                           fit: BoxFit.cover,

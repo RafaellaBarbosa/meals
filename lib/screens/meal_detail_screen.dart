@@ -38,11 +38,19 @@ class MealDetailScreen extends StatelessWidget {
           children: [
             Hero(
               tag: meal.id,
-              child: Image.network(
-                meal.imageUrl,
-                height: 300,
+              child: FadeInImage.assetNetwork(
+                placeholder: 'assets/images/placeholder.png',
+                image: meal.imageUrl,
+                height: 250,
                 width: double.infinity,
                 fit: BoxFit.cover,
+                imageErrorBuilder:
+                    (context, error, stackTrace) => Image.asset(
+                      'assets/images/placeholder.png',
+                      height: 250,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    ),
               ),
             ),
             _createSectionTitle(context, 'Ingredientes'),
