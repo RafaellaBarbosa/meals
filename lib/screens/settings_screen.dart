@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meals/components/main_drawer.dart';
+import 'package:meals/models/settings.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -8,17 +10,19 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  bool _notifications = true;
-  bool _darkMode = false;
+  var settings = Settings();
 
-  Widget _buildSwitchTile(
+  Widget _createSwitch(
     String title,
-    bool currentValue,
+    String subtitle,
+    bool value,
     Function(bool) onChanged,
   ) {
-    return ListTile(
+    return SwitchListTile.adaptive(
       title: Text(title),
-      trailing: Switch.adaptive(value: currentValue, onChanged: onChanged),
+      subtitle: Text(subtitle),
+      value: value,
+      onChanged: onChanged,
     );
   }
 
@@ -30,26 +34,55 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Configurações')),
-      body: Column(
+      drawer: const MainDrawer(),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
         children: [
-          _buildSwitchTile('Notificações', _notifications, (value) {
-            setState(() {
-              _notifications = value;
-            });
-          }),
-          _buildSwitchTile('Modo Escuro', _darkMode, (value) {
-            setState(() {
-              _darkMode = value;
-            });
-          }),
+          _createSwitch(
+            'Sem Glúten',
+            'Só exibe refeições sem glúten!',
+            settings.isGlutenFree,
+            (value) => setState(() => settings.isGlutenFree = value),
+          ),
+          _createSwitch(
+            'Sem Lactose',
+            'Só exibe refeições sem lactose!',
+            settings.isLactoseFree,
+            (value) => setState(() => settings.isLactoseFree = value),
+          ),
+          _createSwitch(
+            'Vegana',
+            'Só exibe refeições veganas!',
+            settings.isVegan,
+            (value) => setState(() => settings.isVegan = value),
+          ),
+          _createSwitch(
+            'Vegetariana',
+            'Só exibe refeições vegetarianas!',
+            settings.isVegetarian,
+            (value) => setState(() => settings.isVegetarian = value),
+          ),
+          _createSwitch(
+            'Modo Escuro',
+            'Ativa ou desativa o modo escuro!',
+            settings.isDarkMode,
+            (value) => setState(() => settings.isDarkMode = value),
+          ),
+          _createSwitch(
+            'Notificações',
+            'Ativa ou desativa notificações!',
+            settings.isNotificationsEnabled,
+            (value) => setState(() => settings.isNotificationsEnabled = value),
+          ),
+          const Divider(),
           _buildNavigationTile('Termos de Uso', Icons.arrow_forward_ios, () {
-            // Navegar para termos de uso
+            //TODO: Navegar para termos de uso
           }),
           _buildNavigationTile(
             'Política de Privacidade',
             Icons.arrow_forward_ios,
             () {
-              // Navegar para política de privacidade
+              //TODO: Navegar para política de privacidade
             },
           ),
           _buildNavigationTile('Sair', Icons.exit_to_app, () {
@@ -68,13 +101,33 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         child: const Text('Sair'),
                         onPressed: () {
                           Navigator.of(ctx).pop();
-                          // Implementar lógica de logout
+                          //TODO: Implementar lógica de logout
                         },
                       ),
                     ],
                   ),
             );
           }),
+          const SizedBox(height: 10),
+          OutlinedButton.icon(
+            onPressed: () {
+              setState(() {
+                settings = Settings();
+              });
+            },
+            icon: const Icon(Icons.restore),
+            label: const Text('Resetar Configurações'),
+          ),
+          const SizedBox(height: 20),
+          ElevatedButton.icon(
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Preferências salvas!')),
+              );
+            },
+            icon: const Icon(Icons.save),
+            label: const Text('Salvar Preferências'),
+          ),
         ],
       ),
     );
