@@ -3,7 +3,14 @@ import 'package:flutter/material.dart';
 import '../models/meal.dart';
 
 class MealDetailScreen extends StatelessWidget {
-  const MealDetailScreen({super.key});
+  final Function(Meal) onToggleFavorite;
+  final bool Function(Meal) isFavorite;
+
+  const MealDetailScreen({
+    super.key,
+    required this.onToggleFavorite,
+    required this.isFavorite,
+  });
 
   Widget _createSectionTitle(BuildContext context, String title) {
     return Container(
@@ -100,12 +107,20 @@ class MealDetailScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          onToggleFavorite(meal);
+          final isFav = isFavorite(meal);
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('${meal.title} adicionado aos favoritos!')),
+            SnackBar(
+              content: Text(
+                isFav
+                    ? '${meal.title} adicionado aos favoritos!'
+                    : '${meal.title} removido dos favoritos!',
+              ),
+            ),
           );
         },
         tooltip: 'Adicionar aos favoritos',
-        child: const Icon(Icons.star),
+        child: Icon(isFavorite(meal) ? Icons.star : Icons.star_border),
       ),
     );
   }
