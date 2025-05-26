@@ -1,16 +1,70 @@
-# meals
+# 🍽️ Meals App
 
-A new Flutter project.
+Aplicativo desenvolvido em Flutter para explorar e visualizar diversas receitas de refeições, com a possibilidade de filtrá-las por restrições alimentares e marcar favoritas.
 
-## Getting Started
+## ✨ Funcionalidades
 
-This project is a starting point for a Flutter application.
+- ✅ Listagem de categorias de refeições.
+- ✅ Visualização detalhada de cada refeição com ingredientes e passos.
+- ✅ Filtros para dietas: sem glúten, sem lactose, vegana e vegetariana.
+- ✅ Favoritar ou desfavoritar refeições.
+- ✅ Navegação com abas (Tabs): categorias e favoritos.
+- ✅ Configurações personalizadas de filtros.
 
-A few resources to get you started if this is your first Flutter project:
+## 📱 Tecnologias utilizadas
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Flutter** >= 3.29.3
+- **Dart** >= 3.7.2
+- Gerenciamento de rotas com `Navigator`
+- Compartilhamento de estado via `StatefulWidget` e `setState`
+- Animação com `Hero` e `FadeInImage`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Como executar
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/RafaellaBarbosa/meals.git
+cd meals_app
+```
+
+2. Instale as dependências:
+
+```bash
+flutter pub get
+```
+
+3. Execute o projeto:
+
+```bash
+flutter run
+```
+
+## 🛠️ Estrutura de pastas
+
+```
+lib/
+├── components/
+├── data/
+├── models/
+├── screens/
+├── utils/
+├── app.dart
+└── main.dart
+```
+
+## 📸 Demonstração
+
+![Tela inicial](assets/images/tela_categorias.png)
+
+![Tela detalhes](assets/images/tela_refeicao_detalhes.png)
+
+![Tela configurações](assets/images/tela_configuracoes.png)
+
+![Tela Favoritos](assets/images/tela_favoritos.png)
+
+> **Nota**: As imagens de placeholder são utilizadas quando há falha no carregamento das imagens reais.
+
+## 🤝 Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir **issues** ou enviar **pull requests**.
